@@ -75,7 +75,7 @@ class CarousalSliderWhole extends StatelessWidget {
             onPageChanged: (index, reason) =>
                 Provider.of<CarouselProvider>(context, listen: false)
                     .updateImageIndex(index),
-            height: 550,
+            height: 549,
             viewportFraction: 0.75,
             animateToClosest: true,
             enableInfiniteScroll: false,
