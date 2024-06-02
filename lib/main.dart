@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:media_player_example/Carousal%20Slider%20with%20Custom%20Indicator/provider/carousel.dart';
+import 'package:media_player_example/parallax%20effect/parallax.dart';
+import 'package:media_player_example/parallax%20effect/provider/parallax_provider.dart';
 import 'package:provider/provider.dart';
 
 import 'Carousal Slider with Custom Indicator/view/screen.dart';
@@ -10,7 +12,10 @@ void main() {
     ChangeNotifierProvider(
       create: (context) => CarouselProvider(),
     ),
-  ], child: const MediaPlayerExampleApp()));
+    ChangeNotifierProvider(
+      create: (context) => ParallaxProvider(),
+    )
+  ], child: MediaPlayerExampleApp()));
 }
 
 class MediaPlayerExampleApp extends StatelessWidget {
@@ -18,9 +23,9 @@ class MediaPlayerExampleApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: CarousalSlider(),
+      home: ExampleSlider(),
     );
   }
 }
