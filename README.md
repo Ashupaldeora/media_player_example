@@ -80,7 +80,31 @@ CarouselSlider(
   <img src="https://github.com/Ashupaldeora/media_player_example/assets/143180848/7131cf65-7e4c-41a4-80ba-585b47b5ef86" height=500px >
   
   <video src="https://github.com/Ashupaldeora/media_player_example/assets/143180848/3233dcfe-ab2c-49fa-88d6-475f1f33658e"></video>
+  </div>
   
+
+<h3 align="center"><i>1. Parallax Effect </i></h3>
+<h1></h1>
+
+# Flutter Parallax Effect - Daily Quotes App
+
+## Introduction
+
+This is a Flutter project that demonstrates the implementation of a parallax effect in a daily quotes app. The parallax effect is a popular design trend where background content moves at a slower rate than foreground content, creating an illusion of depth and immersion.
+
+
+<div align="center">
+  <img src="https://github.com/Ashupaldeora/media_player_example/assets/143180848/8950b4f1-c44c-4eee-8783-08747743ad12" height=500px >
+  <img src="https://github.com/Ashupaldeora/media_player_example/assets/143180848/35982635-8b67-4f4f-a73b-cb11fc00695b" height=500px >
+  <img src="https://github.com/Ashupaldeora/media_player_example/assets/143180848/e6bbefc3-d378-4fa9-895e-64a467168bd9" height=500px >
+  
+  <video src="https://github.com/Ashupaldeora/media_player_example/assets/143180848/5f834832-5eb2-4ce4-b2f3-27af2ff04f36"></video>
+  </div>
+
+
+
+
+
 
 
 
