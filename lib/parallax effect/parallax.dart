@@ -38,7 +38,7 @@ class ExampleSlider extends StatelessWidget {
               centerTitle: true,
             ),
             SizedBox(
-              height: 50,
+              height: 49,
             ),
             SizedBox(
               height: 590,
