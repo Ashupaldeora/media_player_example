@@ -8,36 +8,6 @@ import 'package:media_player_example/parallax%20effect/component/video_card.dart
 import 'package:media_player_example/parallax%20effect/provider/parallax_provider.dart';
 import 'package:provider/provider.dart';
 
-class ParallaxEffectScreen extends StatelessWidget {
-  const ParallaxEffectScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          SizedBox(
-            height: MediaQuery.of(context).size.height * 0.7,
-            child: PageView.builder(
-              itemCount: videoQuoteData.length,
-              itemBuilder: (context, index) => VideoCard(
-                videoPath: videoQuoteData[index].image,
-                isSelected:
-                    Provider.of<ParallaxProvider>(context).selectedIndex ==
-                        index,
-              ),
-              onPageChanged: (value) =>
-                  Provider.of<ParallaxProvider>(context, listen: false)
-                      .updateSelectedIndex(value),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
 class ExampleSlider extends StatelessWidget {
   ExampleSlider({
     super.key,
@@ -70,32 +40,37 @@ class ExampleSlider extends StatelessWidget {
             SizedBox(
               height: 50,
             ),
-            CarouselSlider.builder(
-                itemCount: videoQuoteData.length,
-                itemBuilder: (context, index, realIndex) {
-                  Provider.of<ParallaxProvider>(context, listen: false)
-                      .updateIndex(index);
-                  return VideoCard(
-                    videoPath: videoQuoteData[index].image,
-                    isSelected:
-                        Provider.of<ParallaxProvider>(context).selectedIndex ==
-                            index,
-                  );
-                },
-                options: CarouselOptions(
-                    onPageChanged: (index, reason) {
-                      Provider.of<ParallaxProvider>(context, listen: false)
-                          .updateFinishedText(false);
-                      Provider.of<CarouselProvider>(context, listen: false)
-                          .updateImageIndex(index);
-                      Provider.of<ParallaxProvider>(context, listen: false)
-                          .updateSelectedIndex(index);
-                    },
-                    height: 550,
-                    viewportFraction: 0.75,
-                    animateToClosest: true,
-                    enableInfiniteScroll: false,
-                    enlargeCenterPage: true)),
+            SizedBox(
+              height: 590,
+              child: CarouselSlider.builder(
+                  itemCount: videoQuoteData.length,
+                  itemBuilder: (context, index, realIndex) {
+                    Provider.of<ParallaxProvider>(context, listen: false)
+                        .updateIndex(index);
+                    return VideoCard(
+                      videoPath: videoQuoteData[index].image,
+                      isSelected: Provider.of<ParallaxProvider>(context)
+                              .selectedIndex ==
+                          index,
+                    );
+                  },
+                  options: CarouselOptions(
+                      onPageChanged: (index, reason) {
+                        Provider.of<ParallaxProvider>(context, listen: false)
+                            .updateFinishedText(false);
+                        Provider.of<CarouselProvider>(context, listen: false)
+                            .updateImageIndex(index);
+                        Provider.of<ParallaxProvider>(context, listen: false)
+                            .updateSelectedIndex(index);
+                      },
+                      height: 550,
+                      viewportFraction: 0.7,
+                      enlargeStrategy: CenterPageEnlargeStrategy.scale,
+                      animateToClosest: true,
+                      scrollPhysics: BouncingScrollPhysics(),
+                      enableInfiniteScroll: false,
+                      enlargeCenterPage: true)),
+            ),
           ],
         ),
       ),
